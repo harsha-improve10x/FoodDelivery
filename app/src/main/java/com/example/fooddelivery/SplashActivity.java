@@ -2,7 +2,9 @@ package com.example.fooddelivery;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -11,5 +13,11 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            Intent intent = new Intent(this, BalkansActivity.class);
+            startActivity(intent);
+            finish();
+        },3000);
     }
 }
